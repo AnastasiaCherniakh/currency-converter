@@ -1,0 +1,22 @@
+:root {
+    --background-color: hsl(144, 31%, 55%);
+    --button-color: hsl(137, 26%, 53%);
+    --button-color-hover: hsl(133, 28%, 41%);
+    --input-field-active: hsl(143, 43%, 90%);
+    --table-color: hsl(0, 0%, 93%);
+}
+
+*, *::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", serif;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+

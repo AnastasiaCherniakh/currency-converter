@@ -1,0 +1,16 @@
+.wrapper {
+    padding-inline: 20px;
+}
+
+@media (width >= 50.625em){ 
+    .wrapper {
+            padding-inline: 44px;
+        }
+}
+
+@media (width >= 75em) {
+    .wrapper {
+        margin-inline: auto;
+    }
+}
+
