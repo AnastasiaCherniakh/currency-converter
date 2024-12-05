@@ -4,13 +4,8 @@
 
 @media (width >= 50.625em){ 
     .wrapper {
-            padding-inline: 44px;
+            padding-inline: 33px;
         }
 }
 
-@media (width >= 75em) {
-    .wrapper {
-        margin-inline: auto;
-    }
-}
 

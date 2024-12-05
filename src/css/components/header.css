@@ -1,17 +1,35 @@
 .header {
     background-color: var(--background-color);
     padding-block: 16px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
+    text-align: center;
 }
 
 .header .logo{
-    font-size: 1.4375rem;
+    font-size: 1rem;
+    line-height: 1.4;
     text-decoration: none;
     color: white;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
-@media (width >= 50.625em) {
-    .header {
-        padding-block: 24px;
+.header .logo:hover {
+    cursor: pointer;
+}
+
+/* ~768px tablet and larger phones */  
+@media (min-width: 48em) {
+    .header .logo {
+        font-size: 1.1875rem;
+    }
+}
+
+/* ~992px laptops */  
+@media (min-width: 62em) {
+    .header .logo {
+        font-size: 1.3125em;
+        letter-spacing: 0.08em;
     }
 }
