@@ -1,8 +1,9 @@
 :root {
-    --background-color: hsl(143, 31%, 29%);
-    --button-color: hsl(137, 26%, 53%);
+    --input-color-focus: hsl(137, 30%, 49%);
+    --main-color: hsl(143, 31%, 29%);
+    --button-color: hsl(137, 26%, 59%);
     --button-color-hover: hsl(133, 28%, 41%);
-    --input-field-active: hsl(143, 43%, 90%);
+    --input-field-active: hsl(143, 39%, 65%);
     --table-color: hsl(0, 0%, 93%);
 }
 

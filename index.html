@@ -12,34 +12,33 @@
     <link rel="stylesheet" href="/src/css/styles.css">
 </head>
 <body>
-    <header class="header wrapper">
+    <header class="header">
        <a class="logo" href="/">Currency Converter</a> 
+       <hr class="divider">
     </header>
 
     <main>
-        <section class="converter">
-            <h1>Currency converter</h1>
-
-            <label for="amount">Amount</label>
-            <input type="number" placeholder="Enter amount" id="amount">
-
-            <label for="fromCurrency">From</label>
-            <select id="fromCurrency">
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-            </select>
-
-            <button class="switch-currency">⇄</button>
-            
-            <label for="toCurrency">To</label>
-            <select id="toCurrency">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-            </select>
-            
-            <button id="convertButton">Convert</button>
-            
-            <p id="result"></p>
+        <section class="converter wrapper">
+            <div class="container">
+    
+                <input type="number" value="1.00" id="amount" />
+    
+                <select id="fromCurrency" class="select-currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+    
+                <button class="switch-currency">⇄</button>
+                
+                <select id="toCurrency" class="select-currency">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+                
+                <button id="convertButton">Convert</button>
+                
+                <p id="result"></p>
+            </div>
 
         </section>
     </main>

@@ -1,8 +1,8 @@
 .header {
-    background-color: var(--background-color);
-    padding-block: 16px;
+    background-color: var(--main-color);
     box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.2);
     text-align: center;
+    padding-top: 1.25rem;
 }
 
 .header .logo{
@@ -17,6 +17,13 @@
 
 .header .logo:hover {
     cursor: pointer;
+}
+
+.header .divider {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    border: 1px solid var(--button-color);
 }
 
 /* ~768px tablet and larger phones */  
