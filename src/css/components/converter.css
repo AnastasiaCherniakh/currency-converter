@@ -47,6 +47,8 @@ input[type="number"] {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* currency select styles
+
 .converter .container .select-currency {
     width: 100%;
     padding: 1rem 1rem;
@@ -63,6 +65,8 @@ input[type="number"] {
     box-shadow: 0 0 4px var(--button-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+*/
 
 
 

@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     <link rel="stylesheet" href="/src/css/styles.css">
 </head>
 <body>
@@ -23,17 +24,11 @@
     
                 <input type="number" value="1.00" id="amount" />
     
-                <select id="fromCurrency" class="select-currency">
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                </select>
+                <select id="currencyDropdownFrom" class="currencyDropdownFrom"></select>
     
                 <button class="switch-currency">⇄</button>
                 
-                <select id="toCurrency" class="select-currency">
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                </select>
+                <select id="currencyDropdownTo" class="currencyDropdownTo"></select>
                 
                 <button id="convertButton">Convert</button>
                 
@@ -44,5 +39,6 @@
     </main>
 
     <script type="module" src="src/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 </body>
 </html>
