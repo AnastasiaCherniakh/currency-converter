@@ -32,11 +32,13 @@ input[type="number"] {
 
 .converter .container #amount {
     width: 100%;
-    padding: 1rem 1rem;
+    padding: 1.65rem 1.25rem;
+    margin-top: 1.1rem;
+    margin-bottom: 0.4rem;
     border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 0.25rem;
-    font-weight: 600;
-    font-size: 1rem;
+    border-radius: 0.3125rem;
+    font-weight: 500;
+    font-size: 1.35rem;
 }
 
 .converter .container #amount:focus {
@@ -46,6 +48,50 @@ input[type="number"] {
     box-shadow: 0 0 4px var(--button-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.converter .container .choices__inner {
+    padding: 1.65rem 1.25rem;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 0.3125rem;
+    background-color: hsl(0, 0%, 100%);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+
+}
+
+.choices.is-focused {
+    border-radius: 0.3125rem;
+    border: 2px solid var(--input-color-focus);
+    box-shadow: 0 0 4px var(--button-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choices__input:focus {
+    border: 2px solid var(--input-color-focus);
+    outline: none;
+    box-shadow: 0 0 4px var(--button-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choices__list--dropdown {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 0.3125rem;
+}
+
+.converter .container .dropdown-label {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: hsl(0, 0%, 40%);
+    text-align: left;
+}
+
+
+
+
+
 
 /* currency select styles
 
