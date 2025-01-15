@@ -1,8 +1,8 @@
 :root {
     --input-color-focus: hsl(137, 30%, 49%);
     --main-color: hsl(143, 31%, 29%);
-    --button-color: hsl(137, 26%, 59%);
-    --button-color-hover: hsl(133, 28%, 41%);
+    --button-color: hsl(137, 26%, 47%);
+    --button-color-hover: hsl(133, 37%, 70%);
     --input-field-active: hsl(143, 39%, 65%);
     --table-color: hsl(0, 0%, 93%);
 }
@@ -14,6 +14,7 @@
 body {
     margin: 0;
     font-family: "Montserrat", serif;
+    background-color: var(--main-color);
 }
 
 h1, h2, h3 {

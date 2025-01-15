@@ -1,6 +1,6 @@
 import { API_KEY } from './config.js';
 
-// Fetches exchange rates from the API
+// Fetch exchange rates from the API
 async function getExchangeRate(currencyDropdownFrom, currencyDropdownTo) {
     const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currencyDropdownFrom}`);
     const data = await response.json();
@@ -10,7 +10,7 @@ async function getExchangeRate(currencyDropdownFrom, currencyDropdownTo) {
 }
 
 
-// Coverts one currency to another
+// Covert one currency to another
 async function convertCurrency() {
     let currencyDropdownFrom = document.getElementById("currencyDropdownFrom").value;
     let currencyDropdownTo = document.getElementById("currencyDropdownTo").value;
@@ -28,7 +28,7 @@ async function convertCurrency() {
 
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
-// Fetches the list of currencies from the API
+// Fetch the list of currencies from the API
 async function fetchCurrencyList() {
     try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/codes`);
@@ -40,7 +40,7 @@ async function fetchCurrencyList() {
     }
 }
 
-// Populates the dropdown with the currency list
+// Populate the dropdown with the currency list
 const populateDropdown = (currencies, dropdownElement)=> {
     currencies.forEach(([code, name]) => { // Populate the dropdown elements
         const option = document.createElement('option');
@@ -50,7 +50,10 @@ const populateDropdown = (currencies, dropdownElement)=> {
     });
 }
 
-// Initializes both dropdowns
+let choicesFrom;
+let choicesTo;
+
+// Initialize both dropdowns
 async function initDropdown() { 
     const currencies = await fetchCurrencyList(); // Fetch currency list
     const dropdownFrom = document.getElementById("currencyDropdownFrom");
@@ -61,12 +64,12 @@ async function initDropdown() {
     populateDropdown(currencies, dropdownTo);
 
    // Initialize the Choices library
-    const choicesFrom = new Choices(dropdownFrom, {
+    choicesFrom = new Choices(dropdownFrom, {
         placeholder: true,
         searchEnabled: true,
     });
 
-    const choicesTo = new Choices(dropdownTo, {
+    choicesTo = new Choices(dropdownTo, {
         placeholder: true,
         searchEnabled: true,
     });
@@ -77,5 +80,20 @@ async function initDropdown() {
 };
 
 initDropdown();
+
+//Switch the selected values between the 'from' and 'to' currency dropdowns
+const switchCurrencies = () => {
+    
+    // Get current values from the dropdowns
+    const fromValue = choicesFrom.getValue(true);
+    const toValue = choicesTo.getValue(true);
+
+    //Swap the dropdowns values
+    choicesFrom.setChoiceByValue(toValue);
+    choicesTo.setChoiceByValue(fromValue);
+
+}
+
+document.getElementById('switch-currency').addEventListener('click', switchCurrencies);
 
 

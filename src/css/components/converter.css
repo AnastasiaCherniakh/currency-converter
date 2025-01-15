@@ -1,7 +1,6 @@
 .converter {
     padding-top: 2.75rem;
     padding-bottom: 6rem;
-    background-color: var(--main-color);
 }
 
 .converter .container {
@@ -26,8 +25,14 @@
 /* Remove number input arrows for all browsers */
 input[type="number"] {
     -moz-appearance: textfield;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .converter .container #amount {
@@ -88,32 +93,50 @@ input[type="number"] {
     text-align: left;
 }
 
+.converter .container .switch-currency {
+    appearance: none;
+    border: none;
+    background: none;
+    color: var(--button-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
 
+.converter .container .switch-currency:hover {
+    transform: scale(1.1);
+    color: var(--button-color-hover);
+}
 
-
-
-
-/* currency select styles
-
-.converter .container .select-currency {
+.converter .container .convertButton {
+    padding: 0.75rem 1rem;
     width: 100%;
-    padding: 1rem 1rem;
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 0.25rem;
-    font-weight: 600;
+    height: 3rem;
     font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    background-color: var(--button-color);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
 }
 
-.converter .container .select-currency:focus {
-    border: 2px solid;
-    border-color: var(--input-color-focus);
+.converter .container .convertButton:hover {
+    background-color: var(--button-color-hover);
+    transform: translateY(-2px);
+}
+
+.converter .container .convertButton:focus {
     outline: none;
-    box-shadow: 0 0 4px var(--button-color);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 8px var(--button-color-hover);
 }
 
-*/
-
+.convert-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 
 @media (min-width: 48em) {
