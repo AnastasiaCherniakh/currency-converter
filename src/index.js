@@ -41,6 +41,7 @@ async function fetchCurrencyList() {
 }
 
 // Populate the dropdown with the currency list
+
 const populateDropdown = (currencies, dropdownElement)=> {
     currencies.forEach(([code, name]) => { // Populate the dropdown elements
         const option = document.createElement('option');

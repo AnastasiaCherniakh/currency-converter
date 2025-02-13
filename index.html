@@ -21,21 +21,25 @@
     <main>
         <section class="converter wrapper">
             <div class="container">
-    
-                <input type="number" value="1.00" id="amount" />
-    
-                <small class="dropdown-label">From</small>
-                <select id="currencyDropdownFrom" class="currencyDropdown"></select>
+
+                <div class="inputs-wrapper">
+                    <div class="inputs-row">
+                        <input type="number" value="1.00" id="amount" />
                 
-    
-                <button class="switch-currency" id="switch-currency">↑↓</button>
-                
-                <small class="dropdown-label">To</small>
-                <select id="currencyDropdownTo" class="currencyDropdown"></select>
-                
-                <button id="convertButton" class="convertButton">Convert</button>
-                
-                <p id="result"></p>
+                        <small class="dropdown-label">From</small>
+                        <select id="currencyDropdownFrom" class="currencyDropdown"></select>
+                        
+                        <button class="switch-currency" id="switch-currency">↑↓</button>
+                            
+                        <small class="dropdown-label">To</small>
+                        <select id="currencyDropdownTo" class="currencyDropdown"></select> 
+                    </div>
+                    
+                    <button id="convertButton" class="convertButton">Convert</button>
+                    <p id="result"></p>  
+                </div>
+
+
             </div>
 
         </section>

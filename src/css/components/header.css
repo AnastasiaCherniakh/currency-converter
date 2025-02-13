@@ -26,15 +26,17 @@
     border: 1px solid var(--button-color);
 }
 
-/* ~768px tablet and larger phones */  
-@media (min-width: 48em) {
+/* Medium devices: Tablets */
+@media (min-width: 37.5em) {
+
     .header .logo {
         font-size: 1.1875rem;
     }
 }
 
-/* ~992px laptops */  
-@media (min-width: 62em) {
+/* Large devices: Laptops and desktops */
+@media (min-width: 64em) {
+    
     .header .logo {
         font-size: 1.3125em;
         letter-spacing: 0.08em;
