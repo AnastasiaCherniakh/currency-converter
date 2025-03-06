@@ -125,7 +125,7 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1.3rem;
     color: white;
     background-color: var(--button-color);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -147,6 +147,29 @@ input[type="number"]::-webkit-outer-spin-button {
 .convert-button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#result {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: left;
+}
+
+#result.show {
+    opacity: 1;
+}
+
+.original-amount {
+    font-size: 1rem;
+    color: hsl(0, 0%, 50%);
+}
+
+.converted-amount {
+    display: block;
+    font-size: 1.9rem;
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: var(--main-color);
 }
 
 /* Medium devices: Tablets */
@@ -230,5 +253,9 @@ input[type="number"]::-webkit-outer-spin-button {
     .converter .container {
         margin: 0 auto;
         gap: 0.8125rem;
+    }
+
+    .original-amount {
+        font-size: 1.125rem;
     }
 }

@@ -18,9 +18,12 @@ async function convertCurrency() {
     
     try {
         let rate = await getExchangeRate(currencyDropdownFrom, currencyDropdownTo); //Fetch exchange rate
-        let convertedAmount = (amount * rate).toFixed(3);
+        let convertedAmount = (amount * rate).toFixed(4);
         // Calculate the result
-        document.getElementById('result').textContent = `${currencyDropdownFrom} ${amount} * ${currencyDropdownTo} ${rate} = ${convertedAmount}`
+        document.querySelector('.original-amount').textContent = `${amount} ${currencyDropdownFrom} =`;
+        document.querySelector('.converted-amount').textContent = `${convertedAmount} ${currencyDropdownTo}`
+
+        document.getElementById('result').classList.add('show');
     } catch(error) {
         document.getElementById('result').textContent = `Error fetching exchange rates.`
     }
