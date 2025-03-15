@@ -2,10 +2,19 @@ import { API_KEY } from './config.js';
 
 // Fetch exchange rates from the API
 async function getExchangeRate(currencyDropdownFrom, currencyDropdownTo) {
-    const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currencyDropdownFrom}`);
+    try {
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${currencyDropdownFrom}`);
+        if(!response.ok) {
+            throw new Error("Failed to fetch data from the API. Please try again later.");
+        }
     const data = await response.json();
     console.log(data);
     return data.conversion_rates[currencyDropdownTo]; // Return exchange rate
+    }
+    catch(error) {
+        console.error("API Error:", error);
+        throw error;
+    }
 
 }
 
@@ -15,6 +24,16 @@ async function convertCurrency() {
     let currencyDropdownFrom = document.getElementById("currencyDropdownFrom").value;
     let currencyDropdownTo = document.getElementById("currencyDropdownTo").value;
     let amount = document.getElementById('amount').value;
+
+    //Clear any previous error message
+    document.getElementById('error-message').textContent = "";
+    document.getElementById('error-message').style.visibility = 'hidden';
+
+    if(isNaN(amount) || amount === '' || amount <= 0) {
+        document.getElementById('error-message').textContent = 'Please enter a valid amount';
+        document.getElementById('error-message').style.visibility = 'visible';
+        return;
+    }
     
     try {
         let rate = await getExchangeRate(currencyDropdownFrom, currencyDropdownTo); //Fetch exchange rate
@@ -44,7 +63,6 @@ async function fetchCurrencyList() {
 }
 
 // Populate the dropdown with the currency list
-
 const populateDropdown = (currencies, dropdownElement)=> {
     currencies.forEach(([code, name]) => { // Populate the dropdown elements
         const option = document.createElement('option');

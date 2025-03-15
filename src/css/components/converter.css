@@ -35,6 +35,10 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.amount-container {
+    position: relative;
+}
+
 #amount {
     width: 100%;
     padding: 1.65rem 1.25rem;
@@ -56,6 +60,16 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #amount:hover {
     background-color: var(--input-field-hover);
+}
+
+.error {
+    position: absolute;
+    visibility: hidden;
+    color: hsl(0, 100%, 50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+    top: 100%;
+    left: 0;
 }
 
 .choices__inner {
@@ -93,6 +107,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .dropdown-label {
+    margin-top: 1.125rem;
     display: block;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -201,6 +216,10 @@ input[type="number"]::-webkit-outer-spin-button {
         flex: 0.8;
         margin: 0;
         padding: 1.65rem 1.25rem;
+    }
+
+    .error {
+        margin-top: 5px;
     }
 
     .switch-currency {

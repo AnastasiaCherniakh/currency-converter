@@ -24,7 +24,10 @@
 
                 <div class="inputs-wrapper">
                     <div class="inputs-row">
-                        <input type="number" value="1.00" id="amount" />
+                        <div class="amount-container">
+                            <input type="number" value="1.00" id="amount" />
+                            <div id="error-message" class="message error"></div>
+                        </div>
                 
                         <small class="dropdown-label">From</small>
                         <select id="currencyDropdownFrom" class="currencyDropdown"></select>
