@@ -1,23 +1,14 @@
-// Fetch API key from the serverless function and returns it
-async function getApiKey() {
-    const response = await fetch('/.netlify/functions/getApiKey');
-    const data = await response.json();
-    return data.apiKey;
-}
-
-// Fetch exchange rates from the API
+// Fetch exchange rates from the serverless function
 async function getExchangeRate(currencyDropdownFrom, currencyDropdownTo) {
     try {
-        const apiKey = await getApiKey();
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${currencyDropdownFrom}`);
+        const response = await fetch(`/.netlify/functions/getExchangeRate?base=${currencyDropdownFrom}`);
 
         if(!response.ok) {
             throw new Error("Failed to fetch data from the API. Please try again later.");
         }
 
         const data = await response.json();
-        console.log(data);
-        return data.conversion_rates[currencyDropdownTo]; // Return exchange rate
+        return data.exchangeRates[currencyDropdownTo]; // Return the exchange rate for the selected currency
     }
     catch(error) {
         console.error("API Error:", error);
@@ -58,13 +49,12 @@ async function convertCurrency() {
 
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
-// Fetch the list of currencies from the API
+// Fetch the list of currencies from the serverless function
 async function fetchCurrencyList() {
     try {
-        const apiKey = await getApiKey();
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/codes`);
+        const response = await fetch(`/.netlify/functions/getCurrencyList`);
         const data = await response.json();
-        return data.supported_codes; // Return the supported codes
+        return data.currencyList; // Return the list of supported currencies
     } catch(error) {
         console.log('Failed to fetch currencies: ', error);
         return [];
