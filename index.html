@@ -15,7 +15,9 @@
 </head>
 <body>
     <header class="header">
-       <a class="logo" href="/">Currency Converter</a> 
+        <h1>
+            <a class="logo" href="/">Currency Converter</a>
+        </h1>
        <hr class="divider">
     </header>
 
@@ -26,14 +28,14 @@
                 <div class="inputs-wrapper">
                     <div class="inputs-row">
                         <div class="amount-container">
-                            <input type="number" value="1.00" id="amount" />
-                            <div id="error-message" class="message error"></div>
+                            <input type="number" value="1.00" id="amount" aria-describedby="error-message" />
+                            <div id="error-message" class="message error" role="alert" aria-describedby="error-message"></div>
                         </div>
                 
                         <small class="dropdown-label">From</small>
                         <select id="currencyDropdownFrom" class="currencyDropdown"></select>
                         
-                        <button class="switch-currency" id="switch-currency">↑↓</button>
+                        <button class="switch-currency" id="switch-currency" aria-label="Switch currencies">↑↓</button>
                             
                         <small class="dropdown-label">To</small>
                         <select id="currencyDropdownTo" class="currencyDropdown"></select> 

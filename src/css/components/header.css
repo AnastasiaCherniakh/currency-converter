@@ -5,9 +5,12 @@
     padding-top: 1.25rem;
 }
 
-.header .logo{
+.header h1 {
     font-size: 1rem;
     line-height: 1.4;
+}
+
+.header .logo{
     text-decoration: none;
     color: white;
     font-weight: 700;
@@ -29,7 +32,7 @@
 /* Medium devices: Tablets */
 @media (min-width: 37.5em) {
 
-    .header .logo {
+    .header h1 {
         font-size: 1.1875rem;
     }
 }
@@ -37,8 +40,11 @@
 /* Large devices: Laptops and desktops */
 @media (min-width: 64em) {
     
-    .header .logo {
+    .header h1 {
         font-size: 1.3125em;
+    }
+
+    .header .logo {
         letter-spacing: 0.08em;
     }
 }
